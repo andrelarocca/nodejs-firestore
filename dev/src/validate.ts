@@ -249,7 +249,7 @@ export function validateOptional(
  * @param str The string to format.
  */
 function formatPlural(num: number, str: string): string {
-  return `${num} ${str}` + (num === 1 ? '' : 's');
+  return num + ' ' + str + (num === 1 ? '' : 's');
 }
 
 /**
