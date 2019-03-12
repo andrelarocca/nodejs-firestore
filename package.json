@@ -1,7 +1,7 @@
 {
   "name": "gcloud-firestore-es5",
   "description": "Firestore Client Library for Node.js",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "license": "Apache-2.0",
   "author": "Google Inc.",
   "engines": {
@@ -39,7 +39,7 @@
     "test": "npm run test-only && npm run conformance",
     "lint": "gts check",
     "clean": "gts clean",
-    "compile": "tsc -p . && mv build build2 && babel --out-dir build build2/ && cp -r dev/protos build && cp -r dev/test/fake-certificate.json build/test/fake-certificate.json && cp dev/src/v1beta1/firestore_client_config.json build/src/v1beta1/ && cp dev/src/v1/firestore_client_config.json build/src/v1/ && cp dev/conformance/test-definition.proto build/conformance && cp dev/conformance/test-suite.binproto build/conformance",
+    "compile": "tsc -p . && mv build build2 && babel --out-dir build build2/ && rm -rf build2 && cp -r dev/protos build && cp -r dev/test/fake-certificate.json build/test/fake-certificate.json && cp dev/src/v1beta1/firestore_client_config.json build/src/v1beta1/ && cp dev/src/v1/firestore_client_config.json build/src/v1/ && cp dev/conformance/test-definition.proto build/conformance && cp dev/conformance/test-suite.binproto build/conformance",
     "fix": "gts fix",
     "prepare": "npm run compile",
     "pretest-only": "npm run compile",
@@ -57,7 +57,7 @@
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
-    "@babel/plugin-transform-typescript": "^7.3.2",
+    "@babel/preset-env": "^7.3.4",
     "@google-cloud/nodejs-repo-tools": "^3.0.0",
     "@types/assert": "^1.4.0",
     "@types/chai": "^4.1.7",
